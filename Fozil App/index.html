@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ZILONG VAULT | Private Gallery</title>
+
+  <meta name="theme-color" content="#090a0d">
+  <meta name="description"
+        content="Zilong Vault, galeri foto pribadi dengan desain hitam dan emas.">
+
+  <link rel="icon" type="image/png" href="assets/zilong-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="topbar">
+    <a href="#" class="brand">
+      <span class="brand-mark">ZV</span>
+      <span class="brand-name">
+        ZILONG<span>VAULT</span>
+      </span>
+    </a>
+
+    <div class="storage-status">
+      <span class="status-dot"></span>
+      LOCAL GALLERY
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">PERSONAL DIGITAL ARCHIVE</span>
+
+        <h1>
+          Your memories.<br>
+          <span>Your legacy.</span>
+        </h1>
+
+        <p class="hero-description">
+          Sebuah ruang pribadi untuk menyimpan momen,
+          mengatur koleksi, dan menjaga kenanganmu tetap terorganisir.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn btn-gold" id="uploadBtn">
+            <span>＋</span> Add New Photos
+          </button>
+
+          <a href="#gallery" class="btn btn-outline">
+            Explore Gallery
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <div>
+            <strong id="photoCount">0</strong>
+            <span>PHOTOS</span>
+          </div>
+          <div class="meta-divider"></div>
+          <div>
+            <strong id="favoriteCount">0</strong>
+            <span>FAVORITES</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="art-frame">
+          <img
+            src="assets/zilong-hero.jpg"
+            alt="Ilustrasi Zilong"
+            class="hero-image"
+          >
+          <div class="art-overlay"></div>
+          <span class="art-label">THE DRAGON SPEAR</span>
+          <span class="art-index">NO. 001</span>
+        </div>
+        <div class="art-decoration"></div>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">YOUR COLLECTION</span>
+          <h2>Photo Gallery<span>.</span></h2>
+        </div>
+
+        <label class="search-box">
+          <span>⌕</span>
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search photos..."
+            aria-label="Cari foto"
+          >
+        </label>
+      </div>
+
+      <div class="gallery-toolbar">
+        <div class="filter-list">
+          <button class="filter-btn active" data-filter="all">
+            All Photos
+          </button>
+          <button class="filter-btn" data-filter="favorites">
+            Favorites
+          </button>
+          <button class="filter-btn" data-filter="recent">
+            Recently Added
+          </button>
+        </div>
+
+        <label class="btn btn-outline import-btn" for="photoInput">
+          + Import
+        </label>
+        <input
+          type="file"
+          id="photoInput"
+          accept="image/*"
+          multiple
+          hidden
+        >
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid"></div>
+
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">✧</div>
+        <h3>Your gallery awaits.</h3>
+        <p>
+          Belum ada foto di sini. Tambahkan foto pertamamu
+          untuk mulai membangun koleksi.
+        </p>
+        <button class="btn btn-gold" id="emptyUploadBtn">
+          Upload Your First Photo
+        </button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© 2026 ZILONG VAULT</span>
+      <span>DESIGNED FOR YOUR MEMORIES</span>
+    </footer>
+  </main>
+
+  <input
+    type="file"
+    id="replaceInput"
+    accept="image/*"
+    hidden
+  >
+
+  <dialog id="photoDialog" class="photo-dialog">
+    <button
+      class="dialog-close"
+      id="dialogClose"
+      aria-label="Tutup preview"
+    >×</button>
+    <img id="dialogImage" src="" alt="Preview foto">
+    <div class="dialog-info">
+      <h3 id="dialogTitle"></h3>
+      <p id="dialogDate"></p>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>
